@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<header class="container">
+  <div class="row">
+    <div class="col col-9 center">
+      <a href="/" class="site-title">{{ site.title }}</a>
+      <h1 class="subtitle"><strong>{{ page.title | escape }}</strong></h1>
+      {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
+      <aside>{{ page.date | date: date_format }}&nbsp;&mdash;&nbsp;{{ page.written_at }}</aside>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <article class="col col-9 center">
+      {{ content }}
+    </article>
+  </div>
+</div>

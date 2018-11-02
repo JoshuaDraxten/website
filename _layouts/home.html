@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <header class="container">
+    <div class="row">
+      <div class="col col-3">
+        <img src="/assets/memoji.gif" alt="Animated version of me" style="width: 200px; display: block; margin: auto;">
+      </div>
+      <div class="col col-9">
+        <h1 class="jumbo has-subtitle">{{ site.title }}</h1>
+        <h2 class="subtitle">{{ site.description }}</h2>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      {%- if site.posts.size > 0 -%}
+        <div class="col col-9 col-offset-3">
+          <p><strong>Projects:</strong></p>
+          <ul>
+            {%- for post in site.posts -%}
+              {% if post.categories contains "projects" %}
+                <li>
+                  <a href="{{ post.url | relative_url }}" class="homepage-link">
+                    <span>{{ post.title | escape }}</span>
+                  </a>
+                  <span class="read"></span>
+                </li>
+              {% endif %}
+            {%- endfor -%}
+          </ul>
+        </div>
+        <div class="col col-9 col-offset-3">
+          <p><strong>Thoughts:</strong></p>
+          <ul>
+            {%- for post in site.posts -%}
+              {% if post.categories contains "thoughts" %}
+                <li>
+                  <a href="{{ post.url | relative_url }}" class="homepage-link">
+                    <span>{{ post.title | escape }}</span>
+                  </a>
+                </li>
+              {% endif %}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+</div>

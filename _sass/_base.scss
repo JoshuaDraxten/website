@@ -1,0 +1,103 @@
+/* TODO: host this myself */
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic');
+
+/* Global */
+* {
+  box-sizing: border-box;
+  font-family: $header-font;
+}
+html, body { margin: 0; }
+
+/* Formatting */
+.row {
+  display: block;
+  margin: auto;
+  width: 940px;
+  max-width: 100%;
+}
+.col {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Typography */
+h1 {
+  font-size: 48px;
+  font-weight: 400;
+  opacity: 87%;
+  &.jumbo { font-size: 72px; }
+  &.has-subtitle { margin-bottom: 0; }
+}
+h2 { font-size: 24px; }
+aside {
+  font-size: 16px;
+  margin-top: 12px;
+  opacity: 87%;
+  font-style: italic;
+  font-family: $body-font;
+}
+p, span, li, ol {
+  font-size: 20px;
+  line-height: 1.6em;
+  font-family: $body-font;
+  text-rendering: optimizelegibility;
+}
+a {
+  text-decoration: none;
+  color: $link-color;
+  &:visited { color: $link-color; }
+}
+.subtitle {
+  margin: 0;
+  opacity: 87%;
+}
+.site-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+header {
+  padding-top: 100px;
+  a {
+    color: inherit !important;
+    text-decoration: none;
+    &:hover { color: $link-color !important; }
+  }
+}
+
+strong, span, a {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Desktop & Tablet */
+@media screen and ( min-width: 600px ) {
+  .col { padding: 18px 4px; }
+  .col-3 { width: 24.5%; }
+  .col-6 { width: 49.5%; }
+  .col-9 { width: 74.5%; }
+  .col-offset-3 { padding-left: 25%; }
+  .col-offset-6 { padding-left: 50%; }
+  .col-offset-9 { padding-left: 75%; }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .col {
+    width: 100%;
+    padding: 0 42px;
+  }
+
+  h1 {
+    font-size: 36px;
+    &.jumbo { font-size: 48px; }
+  }
+  h2 { font-size: 24px; }
+  p, span, li, ol { font-size: 18px; }
+  aside { font-size: 18px; }
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
